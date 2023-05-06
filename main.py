@@ -21,6 +21,10 @@ from picographics import PicoGraphics, DISPLAY_INKY_FRAME_7 as DISPLAY  # 7.3"
 import urequests
 from urllib import urequest
 
+# Device hostname on network
+# If you have more than one device each needs a unique name
+MYHOSTNAME = 'rp2-cal'
+
 # Length of time between updates in Seconds.
 # Frequent updates will reduce battery life!
 UPDATE_INTERVAL = 60 * 1  # once 3 minutes for testing
@@ -70,6 +74,7 @@ def stop_network_led():
 def network_connect(SSID, PSK):
     # Enable the Wireless
     wlan = network.WLAN(network.STA_IF)
+    wlan.config(hostname=MYHOSTNAME)
     wlan.active(True)
 
     # Number of attempts to make before timeout
