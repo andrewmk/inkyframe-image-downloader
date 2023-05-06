@@ -19,7 +19,7 @@ import sys
 from picographics import PicoGraphics, DISPLAY_INKY_FRAME_7 as DISPLAY  # 7.3"
 
 import urequests
-from urllib import myurequest
+from urllib import urequest
 
 # Length of time between updates in Seconds.
 # Frequent updates will reduce battery life!
